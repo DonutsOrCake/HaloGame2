@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wY3-Jt-gZ0">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Card Collection View Controller-->
+        <scene sceneID="8pi-H9-GlB">
+            <objects>
+                <collectionViewController id="85b-ap-1va" customClass="CardCollectionViewController" customModule="HaloGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="byd-On-cad">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="usP-MN-Oev">
+                            <size key="itemSize" width="128" height="128"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="8" minY="8" maxX="8" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="characterCell" id="f4y-8h-yan" customClass="CharacterCollectionViewCell" customModule="HaloGame" customModuleProvider="target">
+                                <rect key="frame" x="8" y="8" width="128" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="tWR-Vb-wW9">
+                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3ET-4W-Dkg">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="3ET-4W-Dkg" secondAttribute="bottom" id="8di-Hq-KW5"/>
+                                        <constraint firstItem="3ET-4W-Dkg" firstAttribute="top" secondItem="tWR-Vb-wW9" secondAttribute="top" id="Fx7-Rm-IFN"/>
+                                        <constraint firstAttribute="trailing" secondItem="3ET-4W-Dkg" secondAttribute="trailing" id="N8d-zr-GMG"/>
+                                        <constraint firstItem="3ET-4W-Dkg" firstAttribute="leading" secondItem="tWR-Vb-wW9" secondAttribute="leading" id="muJ-LD-EjV"/>
+                                    </constraints>
+                                </collectionViewCellContentView>
+                                <connections>
+                                    <outlet property="characterImageView" destination="3ET-4W-Dkg" id="agl-z8-82r"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="85b-ap-1va" id="bwb-H4-EqG"/>
+                            <outlet property="delegate" destination="85b-ap-1va" id="b6c-9u-4sx"/>
+                        </connections>
+                    </collectionView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="Z2l-OE-iqQ">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="line.horizontal.3.decrease" catalog="system" id="3vs-sx-1SG">
+                            <connections>
+                                <segue destination="MQ3-7T-Nbx" kind="presentation" identifier="toDetailVC" id="zaX-1e-fq3"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gXk-BL-Duw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="686.95652173913049" y="65.625"/>
+        </scene>
+        <!--Filter View Controller-->
+        <scene sceneID="MXw-xd-ID0">
+            <objects>
+                <viewController id="MQ3-7T-Nbx" customClass="FilterViewController" customModule="HaloGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xmt-La-Wnp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="140" translatesAutoresizingMaskIntoConstraints="NO" id="NII-BG-EnI">
+                                <rect key="frame" x="132" y="201" width="150" height="440"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kyb-gu-ttu">
+                                        <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="Kyb-gu-ttu" secondAttribute="height" multiplier="1:1" id="2Wa-3Z-lWi"/>
+                                            <constraint firstAttribute="height" constant="150" id="qr8-pY-N6d"/>
+                                        </constraints>
+                                        <state key="normal" image="covenantlogo"/>
+                                        <connections>
+                                            <action selector="covenantButtonTapped:" destination="MQ3-7T-Nbx" eventType="touchUpInside" id="HKO-E2-2nT"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZDH-LF-dnf">
+                                        <rect key="frame" x="0.0" y="290" width="150" height="150"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="ZDH-LF-dnf" secondAttribute="height" multiplier="1:1" id="cSx-ki-uii"/>
+                                        </constraints>
+                                        <state key="normal" image="unsc"/>
+                                        <connections>
+                                            <action selector="unscButtonTapped:" destination="MQ3-7T-Nbx" eventType="touchUpInside" id="Mfb-zw-FO3"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="XHv-UB-nvU"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="NII-BG-EnI" firstAttribute="centerX" secondItem="XHv-UB-nvU" secondAttribute="centerX" id="AST-F8-Jxs"/>
+                            <constraint firstItem="NII-BG-EnI" firstAttribute="centerY" secondItem="XHv-UB-nvU" secondAttribute="centerY" id="cY2-fR-kbR"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YZi-Vc-NRE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1432" y="66"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Pik-WT-f6X">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wY3-Jt-gZ0" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fzD-Qi-9zW">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="85b-ap-1va" kind="relationship" relationship="rootViewController" id="vWA-2D-rad"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sJD-gd-083" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-223.18840579710147" y="65.625"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="covenantlogo" width="310" height="310"/>
+        <image name="line.horizontal.3.decrease" catalog="system" width="128" height="73"/>
+        <image name="unsc" width="550" height="550"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
